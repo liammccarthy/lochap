@@ -1,6 +1,9 @@
 * LOCHAP.COM
 
 
+* server setup
+
+First we want to be running the latest nodejs. There is a ppa availiable for this purpose.
 #+BEGIN_SRC sh
 sudo apt-get update
 sudo apt-get install python-software-properties python g++ make
@@ -9,8 +12,15 @@ sudo apt-get update
 sudo apt-get install nodejs
 #+END_SRC
 
-
+** Clone repo:
 #+BEGIN_SRC sh
+git clone git@github.com:liammccarthy/lochap.git
+cd lochap
 npm install
 node app.js
+#+END_SRC
+
+(source http://stackoverflow.com/questions/16573668/best-practices-when-running-node-js-with-port-80-ubuntu-linode )
+#+BEING_SRC sh
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3000
 #+END_SRC
