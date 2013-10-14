@@ -1,0 +1,16 @@
+* LOCHAP.COM
+
+
+#+BEGIN_SRC sh
+sudo apt-get update
+sudo apt-get install python-software-properties python g++ make
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
+#+END_SRC
+
+
+#+BEGIN_SRC sh
+npm install
+node app.js
+#+END_SRC
